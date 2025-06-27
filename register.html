@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Hajj & Umrah Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./files/logo.png" alt="Logo">
+                <span>Hajj & Umrah Guide</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="locations.html">Guides</a>
+                <a href="index.html#packages">Packages</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <a href="register.html" class="btn btn-primary">Register Now</a>
+             <button id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+         <div id="mobile-menu" class="container">
+            <a href="index.html">Home</a>
+            <a href="locations.html">Guides</a>
+            <a href="index.html#packages">Packages</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="register.html" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Register Now</a>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <section id="register">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-info">
+                        <h2>Register <span>Here</span></h2>
+                        <p>Fill out the form to begin your registration process. Our team will contact you to finalize the details and assist you with the next steps.</p>
+                        <img src="./files/logo.png" alt="Planning">
+                    </div>
+                    <div class="form-box">
+                         <form id="registrationForm" onsubmit="return handleRegistration(event)">
+                            <div id="form-feedback"></div>
+                            <div class="form-grid">
+                                <input type="text" name="myname1" placeholder="Full Name" id="name" required>
+                                <input type="email" name="myemail" placeholder="Email Address" required>
+                                <input type="tel" name="myphone" placeholder="Phone Number" id="phonenum" required>
+                                <input type="number" name="myage" placeholder="Age" required>
+                            </div>
+                            <div class="form-full-width" style="margin-top: 1rem;">
+                                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">Select Package</h4>
+                                <div class="package-options">
+                                    <input type="radio" id="bronze" name="package" value="Bronze" required><label for="bronze" class="radio-label">Bronze</label>
+                                    <input type="radio" id="silver" name="package" value="Silver"><label for="silver" class="radio-label">Silver</label>
+                                    <input type="radio" id="gold" name="package" value="Gold"><label for="gold" class="radio-label">Gold</label>
+                                    <input type="radio" id="platinum" name="package" value="Platinum"><label for="platinum" class="radio-label">Platinum</label>
+                                </div>
+                            </div>
+                            <div class="form-full-width" style="margin-top: 1rem;">
+                                <label style="display: flex; align-items: center;">
+                                    <input type="checkbox" name="t&c" checked required style="width: 1rem; height: 1rem; margin-right: 0.5rem;">
+                                    I accept the <a href="#" style="margin-left: 0.25rem;">Terms & Conditions</a>.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">Submit Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+             <div class="footer-grid">
+                <div>
+                    <h4>Hajj & Umrah Guide</h4>
+                    <p>Your trusted partner for the holy pilgrimage.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="index.html#packages">Packages</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4>Connect With Us</h4>
+                     <div class="social-links">
+                        <a href="#"><img src="./files/social/facebook.png" alt="facebook" style="width: 24px; height: 24px;"></a>
+                        <a href="#"><img src="./files/social/instagram.png" alt="instagram" style="width: 24px; height: 24px;"></a>
+                        <a href="#"><img src="./files/social/twitter.png" alt="twitter" style="width: 24px; height: 24px;"></a>
+                     </div>
+                </div>
+                 <div>
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get offers and latest updates.</p>
+                     <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit">Go</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Hajj and Umrah Guide. All Rights Reserved.</p>
+                <p>Website developed by: Ayman Alareqi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.style.display === 'none' || mobileMenu.style.display === '';
+            mobileMenu.style.display = isHidden ? 'block' : 'none';
+        });
+
+        function handleRegistration(event) {
+            event.preventDefault();
+            const form = event.target;
+            const phoneInput = form.querySelector('#phonenum');
+            const feedbackDiv = form.querySelector('#form-feedback');
+            
+            let isValid = true;
+            let message = '';
+            
+            if (phoneInput.value.length < 10 || isNaN(phoneInput.value)) {
+                isValid = false;
+                message = 'Phone number must be at least 10 digits and contain only numbers.';
+            }
+
+            feedbackDiv.style.display = 'block';
+            if (isValid) {
+                feedbackDiv.className = 'success';
+                feedbackDiv.textContent = 'Registration successful! We will be in touch shortly.';
+                form.reset();
+            } else {
+                 feedbackDiv.className = 'error';
+                 feedbackDiv.textContent = message;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
